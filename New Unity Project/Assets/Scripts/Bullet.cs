@@ -3,12 +3,23 @@ using System.Collections;
 
 public class Bullet : MonoBehaviour {
     float speed;
+    bool start = true;
+    GameManager gameManager;
+    DestroyOnContact doc;
 	// set the bullet speed
 	void Start () {
         speed = 8f;
-	}
+        GameObject gameManagerObject = GameObject.FindWithTag("GameManager");
+        if (gameManagerObject != null)
+        {
+            gameManager = gameManagerObject.GetComponent<GameManager>();
+        }
+        if (gameManager == null)
+        {
+            Debug.Log("Cannot find 'GameManager' script");
+        }
+    }
 	
-
 	void Update () {
         // Get the position of the bullet
         Vector2 position = transform.position;
@@ -21,4 +32,5 @@ public class Bullet : MonoBehaviour {
         if (transform.position.y > max.y)
             Destroy(gameObject);
 	}
+
 }

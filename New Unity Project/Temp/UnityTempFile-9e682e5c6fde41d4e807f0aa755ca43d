@@ -90,11 +90,11 @@ Assets/Completed/Scripts/MovingObject.cs
 Assets/Completed/Scripts/Player.cs
 Assets/Completed/Scripts/SoundManager.cs
 Assets/Completed/Scripts/Wall.cs
-Assets/DestroyOnContact.cs
 Assets/Scripts/BoardManager.cs
 Assets/Scripts/Bullet.cs
 Assets/Scripts/ButtonManager.cs
 Assets/Scripts/CameraFollow.cs
+Assets/Scripts/DestroyOnContact.cs
 Assets/Scripts/GameManager.cs
 Assets/Scripts/Pause.cs
 Assets/Scripts/PlayerMovement.cs

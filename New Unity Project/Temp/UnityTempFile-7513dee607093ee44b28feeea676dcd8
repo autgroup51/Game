@@ -94,6 +94,7 @@ Assets/Scripts/BoardManager.cs
 Assets/Scripts/Bullet.cs
 Assets/Scripts/ButtonManager.cs
 Assets/Scripts/CameraFollow.cs
+Assets/Scripts/DestroyOnContact.cs
 Assets/Scripts/GameManager.cs
 Assets/Scripts/Pause.cs
 Assets/Scripts/PlayerMovement.cs

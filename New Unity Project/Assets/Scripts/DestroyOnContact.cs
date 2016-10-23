@@ -5,14 +5,15 @@ public class DestroyOnContact : MonoBehaviour {
 
     private GameManager gameManager;
     public int score;
+    bool dead = false;
 
-    //Find game manager otherwise reference game manager
+    //Find game manager and reference game manager
 	void Start ()
     {
-        GameObject gameControllerObject = GameObject.FindWithTag("GameManager");
-        if (gameControllerObject != null)
+        GameObject gameManagerObject = GameObject.FindWithTag("GameManager");
+        if (gameManagerObject != null)
         {
-            gameManager = gameManager.GetComponent<GameManager>();
+            gameManager = gameManagerObject.GetComponent<GameManager>();
         }
         if (gameManager == null)
         {
@@ -23,14 +24,16 @@ public class DestroyOnContact : MonoBehaviour {
     //when other touchs this object and is of tag trigger
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Weapon")
-        {
-            gameManager.updateScore(score);
-            Destroy(this.gameObject);
-        }
-        if (other.tag == "Player")
+        string tag = other.gameObject.tag;
+        if(tag == "Player")
         {
             Destroy(other.gameObject);
         }
+
+        if(tag == "Weapon")
+        {
+            Destroy(gameObject);
+        }
+
     }
 }
