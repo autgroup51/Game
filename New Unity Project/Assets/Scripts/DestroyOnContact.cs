@@ -3,12 +3,11 @@ using System.Collections;
 
 public class DestroyOnContact : MonoBehaviour {
 
-    private GameManager gameManager;
-    public int score;
-    bool dead = false;
+    public GameManager gameManager;
+    public int Score = 10;
 
     //Find game manager and reference game manager
-	void Start ()
+	void  Awake()
     {
         GameObject gameManagerObject = GameObject.FindWithTag("GameManager");
         if (gameManagerObject != null)
@@ -25,15 +24,18 @@ public class DestroyOnContact : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D other)
     {
         string tag = other.gameObject.name;
-        if(tag == "Player 1")
+        if(tag == "Player")
         {
-            Destroy(other.gameObject);
+            other.gameObject.SetActive(false);
+            gameManager.updateScore(Score - 10);
         }
 
         if(tag == "PlayerBulletGo(Clone)")
         {
-            //gameManager.updateScore(score);
-            Destroy(gameObject);
+            
+            gameObject.SetActive(false);
+            gameManager.updateScore(Score);
+
         }
 
     }

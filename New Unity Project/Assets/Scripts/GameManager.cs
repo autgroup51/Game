@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour {
     private BoardManager boardScript;                       //Store a reference to our BoardManager which will set up the level.
     private int level = 3;                                  //Current level number, expressed in game as "Day 1".
     public Text scoreGUI;
-    private int score;
+    private int score = 0;
 
     //Awake is always called before any Start functions
     void Awake()
@@ -32,6 +32,8 @@ public class GameManager : MonoBehaviour {
 
         //Call the InitGame function to initialize the first level 
         InitGame();
+
+        SetHighScore();
     }
 
     //Initializes the game for each level.
@@ -50,6 +52,11 @@ public class GameManager : MonoBehaviour {
     public void updateScore(int scoreValue)
     {
         score += scoreValue;
-       scoreGUI.text = "Highscore:" + score;
+        SetHighScore();
+    }
+    void SetHighScore()
+    {
+        scoreGUI.text = "Highscore: " + score.ToString();
     }
 }
+
