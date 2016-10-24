@@ -6,14 +6,14 @@ using UnityEngine.SceneManagement;
 public class Pause : MonoBehaviour {
     GameObject PauseMeun;
     bool paused;
-    bool muted;
+    //bool muted;
 
     [SerializeField]
-    Text mutetext;
+    //Text mutetext;
 	// Use this for initialization
 	void Start () {
         paused = false;
-        PauseMeun = GameObject.Find("PauseMenu");
+       // PauseMeun = GameObject.Find("PauseMenu");
 	}
 	
 	// Update is called once per frame
@@ -22,12 +22,10 @@ public class Pause : MonoBehaviour {
             paused = !paused;
         if (paused)
         {
-            
-            Time.timeScale = 1;
+           Time.timeScale = 0;
         }
         if (!paused)
         {
-            
             Time.timeScale = 1;
         }
 
@@ -38,12 +36,12 @@ public class Pause : MonoBehaviour {
         paused = !paused;
         if (paused)
         {
-            PauseMeun.SetActive(true);
-            Time.timeScale = 1;
+            //PauseMeun.SetActive(true);
+            Time.timeScale = 0;
         }
         if (!paused)
         {
-            PauseMeun.SetActive(false);
+           // PauseMeun.SetActive(false);
             Time.timeScale = 1;
         }
     }

@@ -5,7 +5,6 @@ public class DestroyOnContact : MonoBehaviour {
 
     public GameManager gameManager;
     public int Score = 10;
-
     //Find game manager and reference game manager
 	void  Awake()
     {
