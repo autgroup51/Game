@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
     public static GameManager instance = null;              //Static instance of GameManager which allows it to be accessed by any other script.
     private BoardManager boardScript;                       //Store a reference to our BoardManager which will set up the level.
     private int level = 3;                                  //Current level number, expressed in game as "Day 1".
+    public Text scoreGUI;
+    private int score;
 
     //Awake is always called before any Start functions
     void Awake()
@@ -42,5 +45,11 @@ public class GameManager : MonoBehaviour {
     void Update()
     {
 
+    }
+
+    public void updateScore(int scoreValue)
+    {
+        score += scoreValue;
+       scoreGUI.text = "Highscore:" + score;
     }
 }

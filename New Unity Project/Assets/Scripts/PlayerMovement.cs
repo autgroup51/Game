@@ -42,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
             anim.SetBool("IsWalking", false);
         }
         //Used for calculate the character move speed
-        rbody.MovePosition(rbody.position + movement_vector * Time.deltaTime);
+        rbody.MovePosition(rbody.position + movement_vector * Time.deltaTime * 2);
 
     }
 }

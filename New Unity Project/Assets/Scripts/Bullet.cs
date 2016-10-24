@@ -5,7 +5,6 @@ public class Bullet : MonoBehaviour {
     float speed;
     bool start = true;
     GameManager gameManager;
-    DestroyOnContact doc;
 	// set the bullet speed
 	void Start () {
         speed = 8f;
